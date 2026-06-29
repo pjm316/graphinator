@@ -1,0 +1,7 @@
+node_modules/
+pyodide.js
+.git/
+.pytest_cache/
+.ruff_cache/
+__pycache__/
+pytest-cache-files-*/

@@ -1,0 +1,286 @@
+[hidden] { display: none !important; }
+
+body {
+  font-family: system-ui, sans-serif;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  color: #1a1a1a;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.page-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.graph-area {
+  position: sticky;
+  top: 1rem;
+}
+
+@media (max-width: 700px) {
+  .page-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .graph-area {
+    position: static;
+  }
+}
+
+.field {
+  margin-bottom: 0.75rem;
+}
+
+.row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+.row .field {
+  flex: 1;
+}
+
+label {
+  display: block;
+  font-size: 0.8rem;
+  color: #444;
+  margin-bottom: 0.2rem;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 0.35rem 0.4rem;
+  box-sizing: border-box;
+  font-size: 0.92rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+input[type="color"] {
+  width: 100%;
+  height: 2rem;
+  padding: 0.1rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.eq-list,
+.pt-list {
+  margin-bottom: 0.35rem;
+}
+
+.eq-row {
+  background: #f9f9fb;
+  border: 1px solid #e5e5ea;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin-bottom: 0.45rem;
+}
+
+.eq-line {
+  display: flex;
+  gap: 0.35rem;
+  align-items: flex-end;
+  margin-bottom: 0.3rem;
+}
+
+.eq-line:last-child {
+  margin-bottom: 0;
+}
+
+.lbl-grp {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.lbl-grp label {
+  font-size: 0.72rem;
+  color: #555;
+  margin-bottom: 0.1rem;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lbl-grp.color-grp {
+  flex: 0 0 2.2rem;
+}
+
+.lbl-grp.mini-grp {
+  flex: 0 0 3rem;
+}
+
+.eq-line input,
+.eq-line select {
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.eq-line input[type="color"] {
+  height: 1.8rem;
+  padding: 0.05rem;
+}
+
+.eq-line input[type="checkbox"] {
+  width: auto;
+  margin-top: 0.3rem;
+}
+
+.remove-btn {
+  flex: 0 0 1.6rem;
+  height: 1.8rem;
+  align-self: flex-end;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background: #f5f5f5;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #555;
+}
+
+.remove-btn:hover {
+  background: #fee;
+  color: #600;
+  border-color: #c44;
+}
+
+.add-btn {
+  font-size: 0.82rem;
+  padding: 0.22rem 0.65rem;
+  border: 1px dashed #aaa;
+  border-radius: 3px;
+  background: none;
+  cursor: pointer;
+  color: #555;
+  margin-bottom: 0.65rem;
+  display: block;
+}
+
+.add-btn:hover {
+  background: #f0f4ff;
+  border-color: #4169e1;
+  color: #4169e1;
+}
+
+.check-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0.25rem 0 0.6rem;
+}
+
+.check-lbl {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.check-lbl input[type="checkbox"],
+.check-lbl input[type="radio"] {
+  width: auto;
+  margin: 0;
+}
+
+.lw-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-left: auto;
+}
+
+.lw-wrap label {
+  display: inline;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.lw-wrap input {
+  width: 3.5rem;
+}
+
+.inline-field {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.inline-field label {
+  display: inline;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  margin-bottom: 0;
+}
+
+.inline-field input {
+  width: 4rem;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 0.65rem 0;
+}
+
+#status {
+  color: #555;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.error {
+  color: #b00020;
+  font-weight: 500;
+  min-height: 1.1em;
+  margin: 0 0 0.4rem;
+  font-size: 0.88rem;
+}
+
+.warning {
+  color: #7a4a00;
+  font-size: 0.88rem;
+  margin: 0.2rem 0;
+}
+
+.graph img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.dl-btn {
+  margin-top: 0.6rem;
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background: #fafafa;
+}
+
+.dl-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}

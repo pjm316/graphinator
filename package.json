@@ -1,0 +1,11 @@
+{
+  "name": "graphinator-formatting",
+  "private": true,
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  },
+  "scripts": {
+    "format": "python -m ruff format . && prettier --write .",
+    "format:check": "python -m ruff format --check . && prettier --check ."
+  }
+}

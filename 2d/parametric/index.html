@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Parametric Grapher</title>
+    <link rel="stylesheet" href="../../app.css" />
+  </head>
+  <body>
+    <h1>Parametric Grapher</h1>
+    <div id="status">Loading...</div>
+
+    <div class="page-layout">
+      <div class="controls">
+        <div class="eq-list" id="param-eqs"></div>
+        <button class="add-btn" id="param-add" type="button">
+          + Add equation
+        </button>
+        <div class="pt-list" id="param-pts"></div>
+        <button class="add-btn" id="param-pts-add" type="button">
+          + Add point
+        </button>
+        <hr />
+        <div class="row">
+          <div class="field">
+            <label for="param-xmin">xmin</label
+            ><input id="param-xmin" type="number" value="-2" step="1" />
+          </div>
+          <div class="field">
+            <label for="param-xmax">xmax</label
+            ><input id="param-xmax" type="number" value="2" step="1" />
+          </div>
+          <div class="field">
+            <label for="param-xstep">step</label
+            ><input
+              id="param-xstep"
+              type="number"
+              value="1"
+              min="0.1"
+              step="0.5"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="param-ymin">ymin</label
+            ><input id="param-ymin" type="number" value="-2" step="1" />
+          </div>
+          <div class="field">
+            <label for="param-ymax">ymax</label
+            ><input id="param-ymax" type="number" value="2" step="1" />
+          </div>
+          <div class="field">
+            <label for="param-ystep">step</label
+            ><input
+              id="param-ystep"
+              type="number"
+              value="1"
+              min="0.1"
+              step="0.5"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="param-width">SVG width</label
+            ><input
+              id="param-width"
+              type="number"
+              value="672"
+              min="200"
+              step="24"
+            />
+          </div>
+          <div class="field">
+            <label for="param-height">SVG height</label
+            ><input
+              id="param-height"
+              type="number"
+              value="672"
+              min="120"
+              step="24"
+            />
+          </div>
+        </div>
+        <div class="check-row">
+          <label class="check-lbl"
+            ><input type="checkbox" id="param-grid" checked /> Grid</label
+          >
+          <label class="check-lbl"
+            ><input type="checkbox" id="param-minor-grid" /> Minor</label
+          >
+          <label class="check-lbl"
+            ><input type="checkbox" id="param-tick-labels" checked />
+            Labels</label
+          >
+          <label class="check-lbl"
+            ><input type="checkbox" id="param-arrows" /> Arrows</label
+          >
+          <div class="lw-wrap">
+            <label for="param-lw">Line width</label
+            ><input
+              id="param-lw"
+              type="number"
+              value="1.5"
+              min="0.5"
+              max="5"
+              step="0.5"
+            />
+          </div>
+        </div>
+        <div id="param-arrow-labels" hidden>
+          <div class="row">
+            <div class="field">
+              <label for="param-xlabel">x label</label
+              ><input id="param-xlabel" type="text" value="" />
+            </div>
+            <div class="field">
+              <label for="param-ylabel">y label</label
+              ><input id="param-ylabel" type="text" value="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="graph-area">
+        <div class="error" id="param-error" role="alert"></div>
+        <div class="graph" id="param-graph"></div>
+        <button class="dl-btn" id="param-dl" type="button" disabled>
+          Save as SVG
+        </button>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cartesian Grapher</title>
+    <link rel="stylesheet" href="../../app.css" />
+  </head>
+  <body>
+    <h1>Cartesian Grapher</h1>
+    <div id="status">Loading...</div>
+
+    <div class="page-layout">
+      <div class="controls">
+        <div class="eq-list" id="cart-eqs"></div>
+        <button class="add-btn" id="cart-add" type="button">
+          + Add equation
+        </button>
+        <div class="pt-list" id="cart-pts"></div>
+        <button class="add-btn" id="cart-pts-add" type="button">
+          + Add point
+        </button>
+        <hr />
+        <div class="row">
+          <div class="field">
+            <label for="cart-xmin">xmin</label
+            ><input id="cart-xmin" type="number" value="-10" step="1" />
+          </div>
+          <div class="field">
+            <label for="cart-xmax">xmax</label
+            ><input id="cart-xmax" type="number" value="10" step="1" />
+          </div>
+          <div class="field">
+            <label for="cart-xstep">step</label
+            ><input
+              id="cart-xstep"
+              type="number"
+              value="1"
+              min="0.1"
+              step="0.5"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="cart-ymin">ymin</label
+            ><input id="cart-ymin" type="number" value="-10" step="1" />
+          </div>
+          <div class="field">
+            <label for="cart-ymax">ymax</label
+            ><input id="cart-ymax" type="number" value="10" step="1" />
+          </div>
+          <div class="field">
+            <label for="cart-ystep">step</label
+            ><input
+              id="cart-ystep"
+              type="number"
+              value="1"
+              min="0.1"
+              step="0.5"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="cart-width">SVG width</label
+            ><input
+              id="cart-width"
+              type="number"
+              value="672"
+              min="200"
+              step="24"
+            />
+          </div>
+          <div class="field">
+            <label for="cart-height">SVG height</label
+            ><input
+              id="cart-height"
+              type="number"
+              value="672"
+              min="120"
+              step="24"
+            />
+          </div>
+        </div>
+        <div class="check-row">
+          <label class="check-lbl"
+            ><input type="checkbox" id="cart-grid" checked /> Grid</label
+          >
+          <label class="check-lbl"
+            ><input type="checkbox" id="cart-minor-grid" /> Minor</label
+          >
+          <label class="check-lbl"
+            ><input type="checkbox" id="cart-tick-labels" checked />
+            Labels</label
+          >
+          <label class="check-lbl"
+            ><input type="checkbox" id="cart-arrows" /> Arrows</label
+          >
+          <div class="lw-wrap">
+            <label for="cart-lw">Line width</label
+            ><input
+              id="cart-lw"
+              type="number"
+              value="1.5"
+              min="0.5"
+              max="5"
+              step="0.5"
+            />
+          </div>
+        </div>
+        <div id="cart-arrow-labels" hidden>
+          <div class="row">
+            <div class="field">
+              <label for="cart-xlabel">x label</label
+              ><input id="cart-xlabel" type="text" value="x" />
+            </div>
+            <div class="field">
+              <label for="cart-ylabel">y label</label
+              ><input id="cart-ylabel" type="text" value="y" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="graph-area">
+        <div class="error" id="cart-error" role="alert"></div>
+        <div class="graph" id="cart-graph"></div>
+        <button class="dl-btn" id="cart-dl" type="button" disabled>
+          Save as SVG
+        </button>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
