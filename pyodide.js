@@ -14,7 +14,9 @@ async function loadPyodideFiles(pyodide, files) {
   const version = Date.now();
   await Promise.all(
     files.map(async ([url, dst]) => {
-      const text = await (await fetch(`${url}?v=${version}`)).text();
+      const res = await fetch(`${url}?v=${version}`);
+      if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status} ${res.statusText}`);
+      const text = await res.text();
       if (dst.includes("/")) {
         pyodide.FS.mkdirTree("/home/pyodide/" + dst.slice(0, dst.lastIndexOf("/")));
       }
