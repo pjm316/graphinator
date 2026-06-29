@@ -11,10 +11,9 @@ function appendWarnings(graphEl, warnings) {
 }
 
 async function loadPyodideFiles(pyodide, files) {
-  const version = Date.now();
   await Promise.all(
     files.map(async ([url, dst]) => {
-      const res = await fetch(`${url}?v=${version}`);
+      const res = await fetch(url);
       if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status} ${res.statusText}`);
       const text = await res.text();
       if (dst.includes("/")) {
